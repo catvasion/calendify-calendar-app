@@ -20,13 +20,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		let renderMonth = document.getElementById('month');
 		let renderYear = document.getElementById('year');
-		console.log(renderMonth);
 
 		renderMonth.textContent = months[month];
 		renderYear.textContent = year;
+		let dates = document.getElementById('dates');
+
+		for (let i = 1; i <= 6; i++) {
+			let row = document.createElement('div');
+			row.classList.add('row');
+			for (let j = 0; j < 7; j++) {
+				let cell = document.createElement('div');
+				cell.classList.add('cell');
+				row.appendChild(cell);
+			}
+			dates.appendChild(row);
+		}
 	};
 	const now = new Date();
 	const currentMonth = now.getMonth();
 	const currentYear = now.getFullYear();
 	currentDate(currentMonth, currentYear);
 });
+
+// const now = new Date();
+// 	const currentMonth = now.getMonth();
+// 	const currentYear = now.getFullYear();
+// 	currentDate(currentMonth, currentYear);

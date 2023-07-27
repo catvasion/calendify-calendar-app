@@ -1,0 +1,183 @@
+/* Reset some default styles and set box-sizing to border-box for all elements */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+	color: #333;
+}
+
+/* Header styles */
+header {
+	background-color: #007bff;
+	color: #fff;
+	padding: 1rem;
+	text-align: center;
+}
+
+/* Main styles */
+main {
+	padding: 2rem;
+}
+
+/* Calendar styles */
+.calendar {
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+
+.calendar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	background-color: #f0f0f0;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.calendar-header h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.prev-btn,
+.next-btn {
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	font-size: 1.5rem;
+	color: #007bff;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+	color: #0056b3;
+}
+
+.days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 8px;
+	padding: 1rem;
+	background-color: #f0f0f0;
+}
+
+.day {
+	text-align: center;
+	font-weight: bold;
+}
+
+.dates {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 8px;
+	padding: 1rem;
+	background-color: #fff;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.row {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 8px;
+}
+
+.cell {
+	text-align: center;
+	padding: 0.5rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.cell:hover {
+	background-color: #f0f0f0;
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+	.calendar-header h2 {
+		font-size: 1rem;
+	}
+
+	.prev-btn,
+	.next-btn {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.calendar-header {
+		flex-direction: column;
+	}
+
+	.calendar-header h2 {
+		margin-bottom: 0.5rem;
+	}
+
+	.prev-btn,
+	.next-btn {
+		margin-top: 0.5rem;
+	}
+}
+/* For mobile devices */
+@media (max-width: 767px) {
+	.calendar-header {
+		flex-direction: column;
+		align-items: center;
+	}
+	.prev-btn,
+	.next-btn {
+		font-size: 1rem;
+	}
+	.days,
+	.dates {
+		grid-template-columns: repeat(7, 1fr);
+		gap: 4px;
+		padding: 0.5rem;
+	}
+	.cell {
+		padding: 0.25rem;
+	}
+}
+
+/* For tablets and larger devices */
+@media (min-width: 768px) {
+	.calendar-header {
+		flex-direction: row;
+	}
+	.prev-btn,
+	.next-btn {
+		font-size: 1.5rem;
+	}
+	.days,
+	.dates {
+		grid-template-columns: repeat(7, 1fr);
+		gap: 8px;
+		padding: 1rem;
+	}
+	.cell {
+		padding: 0.5rem;
+	}
+}
+
+/* For larger screens */
+@media (min-width: 1200px) {
+	.calendar {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
