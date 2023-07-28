@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const currentDate = (month, year) => {
 		let startOfMonth = new Date(year, month).getDay();
 		let numOfDays = 33 - new Date(year, month, 33).getDate();
+		let renderNum = 0;
 
 		let renderMonth = document.getElementById('month');
 		let renderYear = document.getElementById('year');
@@ -32,6 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
 				let cell = document.createElement('div');
 				cell.classList.add('cell');
 				row.appendChild(cell);
+				if (renderNum > numOfDays) {
+					break;
+				}
+				cell.textContent = renderNum;
+				renderNum++;
 			}
 			dates.appendChild(row);
 		}

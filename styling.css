@@ -1,4 +1,3 @@
-/* Reset some default styles and set box-sizing to border-box for all elements */
 * {
 	margin: 0;
 	padding: 0;
@@ -24,14 +23,14 @@ header {
 main {
 	padding: 2rem;
 }
-
-/* Calendar styles */
+/* Add a container for the calendar */
 .calendar {
 	background-color: #fff;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	border-radius: 8px;
 }
 
+/* Calendar header styles */
 .calendar-header {
 	display: flex;
 	justify-content: space-between;
@@ -61,6 +60,7 @@ main {
 	color: #0056b3;
 }
 
+/* Days styles */
 .days {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
@@ -74,6 +74,7 @@ main {
 	font-weight: bold;
 }
 
+/* Dates styles */
 .dates {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
@@ -84,17 +85,18 @@ main {
 	border-bottom-right-radius: 8px;
 }
 
+/* Row styles */
 .row {
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	gap: 8px;
+	display: contents; /* Set display to "contents" to remove the row container */
 }
 
+/* Cell styles */
 .cell {
 	text-align: center;
 	padding: 0.5rem;
 	border-radius: 4px;
 	cursor: pointer;
+	height: 80px;
 }
 
 .cell:hover {
